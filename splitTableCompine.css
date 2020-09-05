@@ -1,0 +1,25 @@
+/* ### COMBINE THE MANY TABLES */
+
+div.tablePage:first-of-type {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+div.tablePage:not(:first-of-type) {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+div.tablePage:last-of-type {
+  margin-bottom: 0px;
+  margin-bottom: 12px;
+}
+
+div.tablePage:not(:first-of-type) > table > thead {
+  max-height: 0px;
+  height: 0px;
+  overflow: hidden;
+  visibility: collapse;
+}

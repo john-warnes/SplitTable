@@ -1,0 +1,124 @@
+/* ### CLEANUP ### */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0px;
+  border: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+tr,
+td,
+th,
+tbody,
+thead,
+html,
+body {
+  border: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+/* ### Fonts ### */
+
+@import url("https://fonts.googleapis.com/css2?family=Kalam&family=Patrick+Hand&family=Permanent+Marker&family=Playfair+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rye&display=swap");
+
+/* ### MAKE PRETTY ### */
+
+body {
+  background-color: #f5f4f4;
+  font-size: clamp(100%, 1rem + 2vw, 24px);
+  padding: 20px;
+}
+
+/* ### TABLE HEAD ### */
+
+table > thead > tr {
+  background-color: #333;
+  color: #fff;
+}
+
+table > thead > tr > th {
+  position: sticky;
+  top: 0px;
+  /* padding: 4px 6px; */
+  text-align: center;
+  background-color: inherit;
+  color: inherit;
+}
+
+/* ### TABLE BODY ### */
+
+table > tbody > tr > td {
+  padding: 2px 6px;
+  border-left: 1px dotted #d9d9d9;
+  border-right: 1px dotted #d9d9d9;
+}
+
+table > tbody > tr {
+  border-bottom: 1px solid #ccc;
+}
+
+/* Every other row colors: even */
+table > tbody > tr:nth-child(even) {
+  background-color: #cccccc25;
+}
+
+/* Every other row colors: odd */
+table > tbody > tr:nth-child(odd) {
+  background-color: #fcfcfc;
+}
+
+/* ### TABLE DIV ### */
+
+div.tablePage {
+  display: block;
+  width: max-content; /* https://caniuse.com/#search=max-content */
+  background-color: #fcfcfc;
+  padding: 16px;
+  margin: 12px 6px;
+  position: relative;
+  box-shadow: 2px 2px 2px #0008;
+}
+
+/* ### FANCY FONTS AND PARAGRAPHS ### */
+
+table > tbody td.description {
+  padding: 0 20px;
+}
+
+table > tbody td.rating {
+  padding: 0 20px;
+}
+
+table td p::first-letter {
+  float: left;
+  font-family: "Rye", cursive;
+  font-size: 195%;
+  font-weight: normal;
+  padding: 0px 4px 0px 0px;
+  margin-top: -8px;
+}
+
+table td p span.first-word {
+  font-family: "Rye", cursive;
+  text-transform: uppercase;
+}
+
+table td p::first-line {
+  display: inline;
+  font-size: 105%;
+}
+
+h1 {
+  font-family: "Rye", cursive;
+  font-weight: normal;
+}
+
+td.fruit {
+  text-align: center;
+  font-weight: bold;
+}

@@ -1,0 +1,36 @@
+/* CSS needed for splitTable */
+
+/*
+  If you column sizes not matching:
+    Make sure the min-width of the table is set to allow the
+    table to render full width columns for best results
+*/
+body {
+  min-width: 800px;
+}
+
+/* might need to set a min width and max with for tds on the table to be split and the resultant tables*/
+table.splitForPrint td,
+table.splitTable td {
+  max-width: 1000px;
+  min-width: 100px;
+}
+
+div.tablePage {
+  writing-mode: inherit;
+  transform: inherit;
+  margin-bottom: 10px;
+}
+
+@media print {
+  div.tablePage {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    margin-bottom: 0px;
+  }
+
+  div.tablePage {
+    page-break-inside: avoid;
+    page-break-after: always;
+  }
+}
