@@ -10,6 +10,7 @@ body {
 }
 
 /* might need to set a min width and max with for tds on the table to be split and the resultant tables*/
+table.SecondSpliting td,
 table.splitForPrint td,
 table.splitTable td {
   max-width: 1000px;
