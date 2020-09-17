@@ -6,17 +6,17 @@
  */
 function splitTables() {
   splitTable("splitForPrint");
-  splitTable("SecondSpliting");
+  splitTable("SecondSplitting");
 }
 
 /**
  * @name Split Table
- * @description Splits Tables with the Class `classname`
+ * @description Splits Tables with the Class `className`
  * @return {Node}
  */
-function splitTable(classname) {
-  if (!classname) alert("Call splitTable with classname of tables you want to spit")
-  console.log(`Spliting: "${classname}"`);
+function splitTable(className) {
+  if (!className) alert("Call splitTable with className of tables you want to spit")
+  console.log(`Splitting: "${className}"`);
 
   /**
    * @param {String} HTML representing any one element with any number of children
@@ -35,12 +35,12 @@ function splitTable(classname) {
 
   // Save ordinal header for copying to the new tables
   console.log(`Saving header`);
-  var thead = document.querySelector(`table.${classname} > thead`);
+  var thead = document.querySelector(`table.${className} > thead`);
 
   console.log(`Setting saved header widths`);
-  thead.querySelectorAll(`table.${classname} > thead > tr > th`).forEach((th) => (th.style.width = `${th.offsetWidth + 20}px`));
+  thead.querySelectorAll(`table.${className} > thead > tr > th`).forEach((th) => (th.style.width = `${th.offsetWidth + 20}px`));
 
-  document.querySelectorAll(`table.${classname} > tbody > tr`).forEach(function (e) {
+  document.querySelectorAll(`table.${className} > tbody > tr`).forEach(function (e) {
     if (_RunningHeight + e.offsetHeight > MaxHeight) {
       console.log(`Detecting needed split(s): ${_PageNo}`);
       _RunningHeight = 0;
@@ -52,10 +52,10 @@ function splitTable(classname) {
 
   for (i = 1; i <= _PageNo; i++) {
     console.log(`Creating new table: ${i}`);
-    document.querySelector(`table.${classname}`).parentElement.appendChild(
+    document.querySelector(`table.${className}`).parentElement.appendChild(
       htmlToElement(
         `<div class="tablePage">
-            <table id="newtable${i}" class="${classname}_child splitTable">
+            <table id="new_table${i}" class="${className}_child splitTable">
               ${thead.outerHTML}
               <tbody></tbody>
             </table>
@@ -64,13 +64,13 @@ function splitTable(classname) {
     );
 
     console.log(`Copy to new table : ${i}`);
-    var newTable = document.querySelector(`#newtable${i}.${classname}_child > tbody`);
-    document.querySelectorAll(`table.${classname} tr[data-page-no="${i}"]`).forEach((r) => newTable.appendChild(r));
+    var newTable = document.querySelector(`#new_table${i}.${className}_child > tbody`);
+    document.querySelectorAll(`table.${className} tr[data-page-no="${i}"]`).forEach((r) => newTable.appendChild(r));
   }
-  console.log(`Removing old talbe: "${classname}"`);
-  document.querySelector(`table.${classname}`).remove();
+  console.log(`Removing old table: "${className}"`);
+  document.querySelector(`table.${className}`).remove();
   
-  console.log(`Done with spliting: "${classname}"`);
+  console.log(`Done with splitting: "${className}"`);
 }
 
 // window.attachEvent("onload", splitTables);
