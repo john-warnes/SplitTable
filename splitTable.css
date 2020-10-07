@@ -11,9 +11,8 @@ body {
 
 /* might need to set a min width and max with for tds on the table to be split and the resultant tables*/
 table.SecondSplitting td,
-table.splitForPrint td,
-table.splitTable td {
-  max-width: 1000px;
+table.splitForPrint td {
+  max-width: 1100px;
   min-width: 100px;
 }
 
@@ -31,7 +30,36 @@ div.tablePage {
   }
 
   div.tablePage {
-    page-break-inside: avoid;
-    page-break-after: always;
+    border: 2px solid black;
+    /* page-break-inside: avoid; */
+    page-break-before: always;
+    width: 1000px;
+    /* height: 1000px; */
   }
+}
+
+/* -----------------------------------  */
+div.tablePage {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  margin-bottom: 0px;
+}
+
+
+
+div.tablePage {
+  border: 2px solid black;
+  /* page-break-inside: avoid; */
+  page-break-before: always;
+  width: 1000px;
+  /* height: 1000px; */
+}
+
+table.splitTable {
+  height: 100%;
+  padding: 5px;
+  background-color: blueviolet;
+}
+
+table th { padding: 5px;
 }
